@@ -529,3 +529,42 @@ events:
       
       
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/usr/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/usr/local/lib/cmake/GTest/GTestConfig.cmake:29 (find_dependency)"
+      - "/usr/share/cmake-3.28/Modules/FindGTest.cmake:194 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
+    directories:
+      source: "/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/CMakeScratch/TryCompile-3wZhE5"
+      binary: "/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/CMakeScratch/TryCompile-3wZhE5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/CMakeScratch/TryCompile-3wZhE5'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3445f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3445f.dir/build.make CMakeFiles/cmTC_3445f.dir/build
+        gmake[1]: Entering directory '/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/CMakeScratch/TryCompile-3wZhE5'
+        Building C object CMakeFiles/cmTC_3445f.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_3445f.dir/src.c.o -c /home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/CMakeScratch/TryCompile-3wZhE5/src.c
+        Linking C executable cmTC_3445f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3445f.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_3445f.dir/src.c.o -o cmTC_3445f 
+        gmake[1]: Leaving directory '/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/CMakeScratch/TryCompile-3wZhE5'
+        
+      exitCode: 0
+...

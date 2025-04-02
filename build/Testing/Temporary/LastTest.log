@@ -1,0 +1,36 @@
+Start testing: Apr 02 11:29 IDT
+----------------------------------------------------------
+1/1 Testing: UrlShortenerTests
+1/1 Test: UrlShortenerTests
+Command: "/home/shahar/git/projects/aka/url-shortener/build/UnitTest"
+Directory: /home/shahar/git/projects/aka/url-shortener/build
+"UrlShortenerTests" start time: Apr 02 11:29 IDT
+Output:
+----------------------------------------------------------
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from UrlShortenerTest
+[ RUN      ] UrlShortenerTest.ShortenUrl
+[       OK ] UrlShortenerTest.ShortenUrl (0 ms)
+[ RUN      ] UrlShortenerTest.LongUrl
+[       OK ] UrlShortenerTest.LongUrl (0 ms)
+[ RUN      ] UrlShortenerTest.InvalidShortUrl
+[       OK ] UrlShortenerTest.InvalidShortUrl (0 ms)
+[ RUN      ] UrlShortenerTest.DuplicateShortenUrl
+[       OK ] UrlShortenerTest.DuplicateShortenUrl (0 ms)
+[ RUN      ] UrlShortenerTest.SameLongUrl
+[       OK ] UrlShortenerTest.SameLongUrl (0 ms)
+[----------] 5 tests from UrlShortenerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"UrlShortenerTests" end time: Apr 02 11:29 IDT
+"UrlShortenerTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 02 11:29 IDT
