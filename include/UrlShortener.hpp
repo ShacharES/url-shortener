@@ -4,7 +4,8 @@
 
 class UrlShortener {
 public:
-	UrlShortener();
+	UrlShortener() = default;
+    ~UrlShortener() = default;
 	std::string GetShortenUrl(const std::string& url);
 	std::string GetLongUrl(const std::string& shortUrl);
 

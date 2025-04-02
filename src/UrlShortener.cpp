@@ -26,7 +26,7 @@ std::string UrlShortener::GenerateShortUrl(const std::string& url)
 {
     std::hash<std::string> hasher;
     size_t hash = hasher(url);
-    std::string shortUrl = "http://short.url/" + std::to_string(hash % 1000000);
+    std::string shortUrl = "short.url/" + std::to_string(hash % 1000000);
 
     return shortUrl;
 }
