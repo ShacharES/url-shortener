@@ -58,3 +58,6 @@ The server will start on http://localhost:18080.
 -**Stop the Server**
 To stop the server, press Ctrl+C in the terminal where the server is running.
 
+- **To Run The Tests**
+  ```bash
+  ./UnitTest
