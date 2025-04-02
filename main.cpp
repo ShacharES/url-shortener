@@ -27,6 +27,9 @@ int main()
         }
 
         std::string longUrl = urlShortener.GetLongUrl(shortUrl);
+        if(longUrl == "") {
+            return crow::response(404, "Short URL not found");
+        }
         return crow::response{ longUrl };
             });
 
