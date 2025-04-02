@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add the include directories
-include_directories(include crow/include)
+include_directories(include crow/include /usr/local/include)
 
 # Add the main application
 add_executable(url_shortener main.cpp src/UrlShortener.cpp)

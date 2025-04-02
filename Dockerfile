@@ -1,7 +1,7 @@
-# Use an official C++ image with build tools
-FROM ubuntu:22.04
+# Stage 1: Build
+FROM ubuntu:22.04 AS build
 
-# Install required packages
+# Install required packages for building
 RUN apt-get update && apt-get install -y \
     g++ \
     cmake \
@@ -12,25 +12,49 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
+# Install standalone Asio (required by Crow)
+RUN wget https://github.com/chriskohlhoff/asio/archive/refs/tags/asio-1-24-0.tar.gz && \
+    tar -xzf asio-1-24-0.tar.gz && \
+    mv asio-asio-1-24-0/asio/include/asio /usr/local/include/ && \
+    rm -rf asio-1-24-0.tar.gz asio-asio-1-24-0
+
+RUN ls -l /usr/local/include/asio.hpp
+
 # Install Google Test
 RUN cd /usr/src/gtest && \
     cmake . && \
-    make && \
-    cp *.a /usr/lib
+    make
+
+# Install Crow (header-only library)
+RUN git clone https://github.com/CrowCpp/Crow.git /usr/local/include/crow
 
 # Set the working directory
 WORKDIR /app
 
-# Copy the project files into the container
+# Copy the project files into the build container
 COPY . .
 
 # Create a build directory and build the project
-RUN mkdir build && cd build && \
+RUN rm -rf build && mkdir build && cd build && \
     cmake .. && \
-    make
+    make VERBOSE=1
+
+# Stage 2: Runtime
+FROM ubuntu:22.04
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y \
+    libboost-all-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the built application from the build stage
+COPY --from=build /app/build/url_shortener /app/url_shortener
 
 # Expose the port the server will run on
 EXPOSE 18080
 
 # Run the application
-CMD ["./build/url_shortener"]
+CMD ["./url_shortener"]
