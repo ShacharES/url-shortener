@@ -1,0 +1,33 @@
+# Ignore object files and other build artifacts
+*.o
+*.obj
+*.so
+*.a
+*.out
+*.exe
+*.dll
+
+# Ignore build directories
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# Ignore editor and IDE-specific files
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignore Docker-related files
+docker-compose.override.yml
+
+# Ignore test binaries
+UnitTest
