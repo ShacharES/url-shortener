@@ -1,0 +1,3 @@
+/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/url_shortener.dir
+/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/edit_cache.dir
+/home/shahar/git/projects/aka/url-shortener/build/CMakeFiles/rebuild_cache.dir
