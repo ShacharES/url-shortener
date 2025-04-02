@@ -7,8 +7,8 @@ std::string UrlShortener::GetShortenUrl(const std::string& url)
     }
 
     std::string shortUrl = GenerateShortUrl(url);
-    urlMap[url] = shortUrl;
-    reverseUrlMap[shortUrl] = url;
+    longToShortMap[url] = shortUrl;
+    shortToLongMap[shortUrl] = url;
 
     return shortUrl;
 }
