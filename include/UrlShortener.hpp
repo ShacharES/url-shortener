@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <shared_mutex>
+#include <mutex>
 #include <unordered_map>
 
 class UrlShortener {
@@ -29,4 +31,6 @@ private:
      * @return The generated short URL.
      */
 	std::string GenerateShortUrl(const std::string& url);
+
+    std::mutex m_mutex;
 };
