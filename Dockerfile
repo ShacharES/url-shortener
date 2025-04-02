@@ -12,13 +12,6 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-# Install standalone Asio (required by Crow)
-RUN wget https://github.com/chriskohlhoff/asio/archive/refs/tags/asio-1-24-0.tar.gz && \
-    tar -xzf asio-1-24-0.tar.gz && \
-    mv asio-asio-1-24-0/asio/include/asio /usr/local/include/ && \
-    rm -rf asio-1-24-0.tar.gz asio-asio-1-24-0
-
-RUN ls -l /usr/local/include/asio.hpp
 
 # Install Google Test
 RUN cd /usr/src/gtest && \
