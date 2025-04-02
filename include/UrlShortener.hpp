@@ -1,0 +1,16 @@
+#pragma once
+#include <string>
+#include <unordered_map>
+#include "crow.h"
+
+class UrlShortener {
+public:
+	UrlShortener();
+	std::string GetShortenUrl(const std::string& url);
+	std::string GetLongUrl(const std::string& shortUrl);
+
+private:
+	std::unordered_map<std::string, std::string> longToShortMap;
+	std::unordered_map<std::string, std::string> shortToLongMap;
+	std::string GenerateShortUrl(const std::string& url);
+};
