@@ -27,3 +27,34 @@ Before building and running the project, ensure the following dependencies are i
   sudo cmake .
   sudo make
   sudo cp *.a /usr/lib
+
+## Installation and Build Instructions
+- **Clone the Repository:**
+  ```bash
+  git clone https://github.com/ShacharES/url-shortener.git
+  cd url-shortener
+
+- **Create a Build Directory:**
+  ```bash
+  mkdir build
+  cd build
+
+- **Run CMake: Configure the project using CMake:**
+  ```bash
+  cmake ..
+
+- **Build the Project: Compile the application:**
+  ```bash
+  make
+
+- **Running the Service** Run the server executable:
+
+  ```bash
+  ./url_shortener
+
+
+The server will start on http://localhost:18080.
+
+-**Stop the Server**
+To stop the server, press Ctrl+C in the terminal where the server is running.
+
