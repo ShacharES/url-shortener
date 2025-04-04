@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     cmake \
     libboost-all-dev \
     libgtest-dev \
+    libasio-dev \
     git \
     wget \
     make \
@@ -21,6 +22,7 @@ RUN cd /usr/src/gtest && \
 # Install Crow (header-only library)
 RUN git clone https://github.com/CrowCpp/Crow.git /usr/local/include/crow
 
+
 # Set the working directory
 WORKDIR /app
 
@@ -30,6 +32,7 @@ COPY . .
 # Create a build directory and build the project
 RUN rm -rf build && mkdir build && cd build && \
     cmake .. && \
+    ls -l /usr/include/asio && echo "✅ asio exists!" && \
     make VERBOSE=1
 
 # Stage 2: Runtime
