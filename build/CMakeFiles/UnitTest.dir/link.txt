@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/UnitTest.dir/test/UnitTest.cpp.o CMakeFiles/UnitTest.dir/src/UrlShortener.cpp.o -o UnitTest  /usr/local/lib/libgtest.a -lpthread 
